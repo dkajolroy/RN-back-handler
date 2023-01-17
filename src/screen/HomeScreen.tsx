@@ -1,28 +1,15 @@
-import {  BackHandler, Button, Text, View } from "react-native";
+import {BackHandler, Button, Text, View} from 'react-native';
 import React from 'react';
-import { useFocusEffect } from "@react-navigation/native";
+import {Props} from '../constant/Interface';
 
-
-export default function HomeScreen({navigation}) {
-
-
-  useFocusEffect(
-    React.useCallback(() => {
-      const onBackPress = () => {
-       console.log("OK")
-          return false;
-      };
-
-      const subscription = BackHandler.addEventListener('hardwareBackPress', onBackPress);
-
-      return () => subscription.remove();
-    }, [])
-  );
-
+export default function HomeScreen({navigation}: Props) {
   return (
     <View>
       <Text>Home Screen</Text>
-      <Button title="Profile" onPress={()=>navigation.navigate("Profile")} />
+      <Button
+        title="Profile"
+        onPress={() => navigation.navigate('Profile', {userId: ''})}
+      />
     </View>
-  )
+  );
 }
