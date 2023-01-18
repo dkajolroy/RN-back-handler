@@ -1,11 +1,18 @@
-import {createDrawerNavigator} from '@react-navigation/drawer';
+import {
+  createDrawerNavigator,
+  DrawerContentComponentProps,
+} from '@react-navigation/drawer';
 import StackNavigation from './StackNavigation';
 import ProfileScreen from '../screen/ProfileScreen';
+import CustomDrawer from './CustomDrawer';
 
 export default function DrawerNavigation() {
   const Drawer = createDrawerNavigator();
   return (
     <Drawer.Navigator
+      drawerContent={(props: DrawerContentComponentProps) => (
+        <CustomDrawer {...props} />
+      )}
       screenOptions={{
         drawerType: 'slide',
         drawerStatusBarAnimation: 'slide',
