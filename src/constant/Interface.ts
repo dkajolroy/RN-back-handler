@@ -3,7 +3,7 @@ import {GestureResponderEvent} from 'react-native/types';
 
 export type RootStackParamList = {
   Home: undefined;
-  Feed: {sort: 'latest' | 'top'} | undefined;
+  Profile: undefined;
 };
 export type Props = NativeStackScreenProps<RootStackParamList>;
 
