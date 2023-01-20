@@ -5,9 +5,10 @@ import {
 import StackNavigation from './StackNavigation';
 import ProfileScreen from '../screen/ProfileScreen';
 import CustomDrawer from './CustomDrawer';
+import {DrawerParamList} from '../constant/Interface';
 
 export default function DrawerNavigation() {
-  const Drawer = createDrawerNavigator();
+  const Drawer = createDrawerNavigator<DrawerParamList>();
   return (
     <Drawer.Navigator
       drawerContent={(props: DrawerContentComponentProps) => (
